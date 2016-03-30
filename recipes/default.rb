@@ -29,12 +29,11 @@ directory '/etc/chef-compliance' do
   action :create
 end
 
-# create the initial chef-server config file
+# create the initial chef-compliance config file
 template '/etc/chef-compliance/chef-compliance.rb' do
   source 'chef-compliance.rb.erb'
   owner 'root'
   group 'root'
   action :create
   notifies :reconfigure, 'chef_ingredient[compliance]', :immediately
-  # only_if { File.exist?('/etc/chef-compliance/actions-source.json') }
 end
