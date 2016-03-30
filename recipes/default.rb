@@ -36,5 +36,5 @@ template '/etc/chef-compliance/chef-compliance.rb' do
   group 'root'
   action :create
   notifies :reconfigure, 'chef_ingredient[compliance]', :immediately
-  #only_if { File.exist?('/etc/opscode-analytics/actions-source.json') }
+  #only_if { File.exist?('/etc/chef-compliance/actions-source.json') }
 end
