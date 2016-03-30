@@ -2,7 +2,7 @@ chef-compliance Cookbook
 =======================
 
 [![Build Status](https://travis-ci.org/mengesb/chef-compliance.svg?branch=master)](https://travis-ci.org/mengesb/chef-compliance)
-<!-- [![Cookbook Version](https://img.shields.io/cookbook/v/chef-analytics.svg)](https://supermarket.chef.io/cookbooks/chef-analytics) -->
+[![Cookbook Version](https://img.shields.io/cookbook/v/chef-compliance.svg)](https://supermarket.chef.io/cookbooks/chef-compliance)
 
 This cookbook configures a system to be a standalone Chef Compliance Server. It
 will install the appropriate platform-specific compliance Omnibus
@@ -15,8 +15,8 @@ This cookbook is tested with  Chef (client) 12. It may work with or
 without modification on earlier versions of Chef, but Chef 12 is
 recommended.
 
-<!-- This cookbook will also not properly install analytics unless you have copied
-actions-source.json into /etc/opscode-analytics from your chef-server. -->
+This cookbook will install Chef Compliance, but requires you to setup
+the server by going to https://<host>/ and accepting the EULA.
 
 ## Cookbooks
 
