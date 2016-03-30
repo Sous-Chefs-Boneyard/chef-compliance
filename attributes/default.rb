@@ -49,4 +49,4 @@ default['chef-compliance']['api_fqdn'] = node['fqdn']
 #     }
 #   )
 #
-default['chef-analytics']['configuration'] = {}
+default['chef-compliance']['configuration'] = {}

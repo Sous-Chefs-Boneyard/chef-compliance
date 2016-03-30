@@ -1,11 +1,11 @@
-chef-analytics Cookbook
+chef-compliance Cookbook
 =======================
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/chef-analytics.svg?branch=master)](https://travis-ci.org/chef-cookbooks/chef-analytics)
-[![Cookbook Version](https://img.shields.io/cookbook/v/chef-analytics.svg)](https://supermarket.chef.io/cookbooks/chef-analytics)
+[![Build Status](https://travis-ci.org/mengesb/chef-compliance.svg?branch=master)](https://travis-ci.org/mengesb/chef-compliance)
+<!-- [![Cookbook Version](https://img.shields.io/cookbook/v/chef-analytics.svg)](https://supermarket.chef.io/cookbooks/chef-analytics) -->
 
-This cookbook configures a system to be a standalone Chef Analytics Server. It
-will install the appropriate platform-specific opscode-analytics Omnibus
+This cookbook configures a system to be a standalone Chef Compliance Server. It
+will install the appropriate platform-specific compliance Omnibus
 package from Package Cloud and perform the initial configuration.
 
 
@@ -15,8 +15,8 @@ This cookbook is tested with  Chef (client) 12. It may work with or
 without modification on earlier versions of Chef, but Chef 12 is
 recommended.
 
-This cookbook will also not properly install analytics unless you have copied
-actions-source.json into /etc/opscode-analytics from your chef-server.
+<!-- This cookbook will also not properly install analytics unless you have copied
+actions-source.json into /etc/opscode-analytics from your chef-server. -->
 
 ## Cookbooks
 
@@ -32,7 +32,7 @@ This cookbook is tested on the following platforms using the
 Attributes
 ----------
 
-#### chef-analytics::default
+#### chef-compliance::default
 <table>
   <tr>
     <th>Key</th>
@@ -41,42 +41,42 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['chef-analytics']['version']</tt></td>
+    <td><tt>['chef-compliance']['version']</tt></td>
     <td>String</td>
-    <td>What version of analytics to install</td>
+    <td>What version of compliance to install</td>
     <td><tt>nil</tt></td>
   </tr>
   <tr>
-    <td><tt>['chef-analytics']['package_source']</tt></td>
+    <td><tt>['chef-compliance']['package_source']</tt></td>
     <td>String</td>
     <td>Anything other than package cloud</td>
     <td><tt>nil</tt></td>
   </tr>
   <tr>
-    <td><tt>['chef-analytics']['api_fqdn']</tt></td>
+    <td><tt>['chef-compliance ']['api_fqdn']</tt></td>
     <td>String</td>
     <td>FQDN of host</td>
     <td><tt>node['fqdn']</tt></td>
   </tr>
   <tr>
-    <td><tt>['chef-analytics']['configuration']</tt></td>
+    <td><tt>['chef-compliance']['configuration']</tt></td>
     <td>Hash</td>
-    <td>Arbitrary config to add to opscode-analytics.rb</td>
+    <td>Arbitrary config to add to chef-compliance.rb</td>
     <td><tt>{}</tt></td>
   </tr>
 </table>
 
 Usage
 -----
-#### chef-analytics::default
+#### chef-compliance::default
 
-Add chef-analytics to your run list.
+Add chef-compliance to your run list.
 
 
 # License and Authors
 
-* Author: Elliott Davis <edavis@chef.io>
-* Copyright 2012-2015, Chef Software, Inc
+* Author: Brian Menges <mengesb@users.noreply.github.com>
+* Copyright 2016, Brian Menges
 
 ```text
 Licensed under the Apache License, Version 2.0 (the "License");
