@@ -64,13 +64,19 @@ Attributes
     <td>Arbitrary config to add to chef-compliance.rb</td>
     <td><tt>{}</tt></td>
   </tr>
+  <tr>
+    <td><tt>['chef-compliance']['accept_license']</tt></td>
+    <td>Boolean</td>
+    <td>Indication that you accept the Chef MLSA</td>
+    <td><tt>false</tt></td>
+  </tr>
 </table>
 
 Usage
 -----
 #### chef-compliance::default
 
-Add chef-compliance to your run list.
+Add chef-compliance to your run list and accept the license agreement by setting `node['chef-compliance']['accept_license'] = true`
 
 
 # License and Authors
