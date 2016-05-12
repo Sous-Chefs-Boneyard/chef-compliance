@@ -2,10 +2,8 @@
 
 topology "standalone"
 
-<% unless node['chef-compliance']['api_fqdn'].nil? || node['chef-compliance']['api_fqdn'].empty? -%>
 <% if node['chef-compliance']['configuration']['compliance_fqdn'].nil? -%>
 compliance_fqdn "<%= node['chef-compliance']['api_fqdn'] %>"
-<% end -%>
 <% end -%>
 
 <% node['chef-compliance']['configuration'].each_pair do |component, tunables| -%>

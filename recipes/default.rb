@@ -14,10 +14,18 @@
 # limitations under the License.
 #
 
+ruby_block 'ensure node can resolve API FQDN' do
+  extend ChefComplianceCookbook::Helpers
+  block { repair_api_fqdn }
+  only_if { api_fqdn_available? }
+  not_if { api_fqdn_resolves? }
+end
+
 chef_ingredient 'compliance' do
   channel node['chef-compliance']['channel'].to_sym
-  version node['chef-compliance']['version']
+  version node['chef-compliance']['version'] unless node['chef-compliance']['version'].nil?
   package_source node['chef-compliance']['package_source']
+  accept_license node['chef-compliance']['accept_license']
   action :upgrade
 end
 
@@ -35,5 +43,9 @@ template '/etc/chef-compliance/chef-compliance.rb' do
   owner 'root'
   group 'root'
   action :create
+  notifies :reconfigure, 'chef_ingredient[compliance]', :immediately
+end
+
+ingredient_config 'compliance' do
   notifies :reconfigure, 'chef_ingredient[compliance]', :immediately
 end
