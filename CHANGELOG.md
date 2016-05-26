@@ -1,7 +1,11 @@
 chef-compliance CHANGELOG
-========================
+=========================
 
 This file is used to list changes made in each version of the chef-compliance cookbook.
+
+0.1.2
+-----
+- [Brian Menges](https://github.com/mengesb) - Remove `ingredient_config` - unnecessary as we're making the config via template
 
 0.1.1
 -----

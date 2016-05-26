@@ -45,7 +45,3 @@ template '/etc/chef-compliance/chef-compliance.rb' do
   action :create
   notifies :reconfigure, 'chef_ingredient[compliance]', :immediately
 end
-
-ingredient_config 'compliance' do
-  notifies :reconfigure, 'chef_ingredient[compliance]', :immediately
-end
