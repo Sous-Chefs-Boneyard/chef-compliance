@@ -14,8 +14,11 @@ platforms:
 
 suites:
   - name: default
+    driver:
+      vm_hostname: compliance.localdomain.local
     run_list:
       - recipe[chef-compliance]
     attributes:
-      chef-analytics:
-        fqdn: 'compliance.chef.piab'
+      chef-compliance:
+        fqdn: 'compliance.localdomain.local'
+        accept_license: true

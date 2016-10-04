@@ -3,6 +3,10 @@ chef-compliance CHANGELOG
 
 This file is used to list changes made in each version of the chef-compliance cookbook.
 
+0.1.4
+-----
+- [Brian Menges](https://github.com/mengesb) - Fix `.kitchen.yml`; addresses #8
+
 0.1.3
 -----
 - [tmcneill-mbo](https://github.com/tmcneill-mbo) - Spelling correction in `attributes.rb` #10
