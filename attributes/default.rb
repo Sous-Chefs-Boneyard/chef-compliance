@@ -24,7 +24,7 @@ default['chef-compliance']['channel'] = :stable
 # Chef MLSA
 # https://www.chef.io/blog/2016/04/26/changes-to-how-chef-products-handle-licenses/
 # https://www.chef.io/online-master-agreement/
-default['chef-complaince']['accept_license'] = false
+default['chef-compliance']['accept_license'] = false
 
 # The Chef Compliance Server must have an API FQDN set.
 # https://docs.chef.io/install_compliance.html
