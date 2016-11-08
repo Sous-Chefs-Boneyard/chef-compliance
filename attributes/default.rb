@@ -31,7 +31,7 @@ default['chef-compliance']['accept_license'] = false
 default['chef-compliance']['api_fqdn'] = node['fqdn']
 
 #
-# Chef Server Tunables
+# Chef Compliance Tunables
 #
 # For a complete list see:
 # https://docs.chef.io/install_compliance.html
@@ -39,7 +39,7 @@ default['chef-compliance']['api_fqdn'] = node['fqdn']
 #
 # In a recipe:
 #
-#   node.override['chef-compliance']['configuration']['nginx']['ssl_port'] = 4433
+#   node.default['chef-compliance']['configuration']['nginx']['ssl_port'] = 4433
 #
 # In a role:
 #
