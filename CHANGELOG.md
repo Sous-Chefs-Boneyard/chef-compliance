@@ -3,6 +3,12 @@ chef-compliance CHANGELOG
 
 This file is used to list changes made in each version of the chef-compliance cookbook.
 
+0.1.5
+-----
+- [Brian Menges](https://github.com/mengesb) - Convert to using kitchen-dokken for test-kitchen
+- [Brian Menges](https://github.com/mengesb) - Add inspec tests
+- [Brian Menges](https://github.com/mengesb) - Fix typo in attributes/default.rb
+
 0.1.4
 -----
 - [Brian Menges](https://github.com/mengesb) - Fix `.kitchen.yml`; addresses #8
