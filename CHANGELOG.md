@@ -3,6 +3,10 @@ chef-compliance CHANGELOG
 
 This file is used to list changes made in each version of the chef-compliance cookbook.
 
+0.1.6
+-----
+- [Brian Menges](https://github.com/mengesb) - Transfer ownership to Sous Chefs
+
 0.1.5
 -----
 - [Brian Menges](https://github.com/mengesb) - Convert to using kitchen-dokken for test-kitchen

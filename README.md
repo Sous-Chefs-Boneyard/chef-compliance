@@ -8,6 +8,7 @@ This cookbook configures a system to be a standalone Chef Compliance Server. It
 will install the appropriate platform-specific compliance Omnibus
 package from Package Cloud and perform the initial configuration.
 
+Chef Supermarket: https://supermarket.chef.io/cookbooks/chef-compliance
 
 Requirements
 ------------
@@ -82,7 +83,8 @@ Add chef-compliance to your run list and accept the license agreement by setting
 # License and Authors
 
 * Author: Brian Menges <mengesb@users.noreply.github.com>
-* Copyright 2016, Brian Menges
+* Maintainer: Sous Chefs
+* Copyright 2016, Apache v2
 
 ```text
 Licensed under the Apache License, Version 2.0 (the "License");
