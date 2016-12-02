@@ -1,7 +1,7 @@
 chef-compliance Cookbook
 =======================
 
-[![Build Status](https://travis-ci.org/mengesb/chef-compliance.svg?branch=master)](https://travis-ci.org/mengesb/chef-compliance)
+[![Build Status](https://travis-ci.org/sous-chefs/chef-compliance.svg?branch=master)](https://travis-ci.org/sous-chefs/chef-compliance)
 [![Cookbook Version](https://img.shields.io/cookbook/v/chef-compliance.svg)](https://supermarket.chef.io/cookbooks/chef-compliance)
 
 This cookbook configures a system to be a standalone Chef Compliance Server. It
