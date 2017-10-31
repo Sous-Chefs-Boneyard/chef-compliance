@@ -20,14 +20,15 @@ platforms:
   # https://github.com/CentOS/sig-cloud-instance-images/issues/30
   # Unfortunately with a privileged container (required) the hostname doesn't
   # correctly set on CentOS 6.x. Commenting out until resolved
-  #- name: centos-6
-  #  driver:
-  #    image: centos:6
-  #    platform: rhel
-  #    pid_one_command: /sbin/init
-  #    intermediate_instructions:
-  #      - RUN yum -y install which lsof initscripts
+  # - name: centos-6
+  #   driver:
+  #     image: centos:6
+  #     platform: rhel
+  #     pid_one_command: /sbin/init
+  #     intermediate_instructions:
+  #       - RUN yum -y install which lsof initscripts yum-plugin-ovl
 
+  # Only works with chef client 12.x - and still warns of error regarding chef_backend resource
   - name: centos-7
     driver:
       image: centos:7
@@ -36,32 +37,21 @@ platforms:
       intermediate_instructions:
         - RUN yum -y install which lsof net-utils
 
-  - name: ubuntu-precise
-    driver:
-      image: ubuntu-upstart:12.04
-      platform: ubuntu
-      pid_one_command: /sbin/init
-      intermediate_instructions:
-        - RUN /usr/bin/apt-get update
-        - RUN /usr/bin/apt-get install -y apt-transport-https
-
   - name: ubuntu-trusty
     driver:
-      image: ubuntu-upstart:14.04
+      image: dokken/ubuntu-14.04
       platform: ubuntu
       pid_one_command: /sbin/init
       provision_command:
         - RUN /usr/bin/apt-get update
-        - RUN /usr/bin/apt-get install -y apt-transport-https net-tools
 
   - name: ubuntu-xenial
     driver:
-      image: ubuntu:16.04
+      image: dokken/ubuntu-16.04
       platform: ubuntu
       pid_one_command: /bin/systemd
       provision_command:
         - RUN /usr/bin/apt update
-        - RUN /usr/bin/apt install -y apt-transport-https net-tools
 
 suites:
   - name: default
@@ -71,5 +61,5 @@ suites:
       - recipe[chef-compliance]
     attributes:
       chef-compliance:
-        api_fqdn: 'compliance.localdomain.local'
         accept_license: true
+        fqdn: 'compliance.localdomain.local'
