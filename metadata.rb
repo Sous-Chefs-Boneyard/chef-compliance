@@ -6,7 +6,7 @@ description      'Installs/Configures chef-compliance'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url       'https://github.com/sous-chefs/chef-compliance' if respond_to?(:source_url)
 issues_url       'https://github.com/sous-chefs/chef-compliance/issues' if respond_to?(:issues_url)
-chef_version     '12.5'
+chef_version     '>= 12.5'
 
 version '0.1.6'
 
