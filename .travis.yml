@@ -1,28 +1,37 @@
-# Use Travis's cointainer based infrastructure
-sudo: false
+sudo: required
+dist: trusty
+
 addons:
   apt:
     sources:
-      - chef-current-precise
+      - chef-stable-trusty
     packages:
       - chefdk
 
-# Don't `bundle install`
 install: echo "skip bundle install"
 
 branches:
   only:
     - master
 
-# Ensure we make ChefDK's Ruby the default
+services: docker
+
+env:
+  matrix:
+  - INSTANCE=default-centos-7
+  - INSTANCE=default-ubuntu-1404
+
 before_script:
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
   - eval "$(/opt/chefdk/bin/chef shell-init bash)"
-  # We have to install chef-sugar for ChefSpec
-  - /opt/chefdk/embedded/bin/chef gem install chef-sugar
-script:
-  - /opt/chefdk/embedded/bin/chef --version
-  - /opt/chefdk/embedded/bin/rubocop --version
-  - /opt/chefdk/embedded/bin/rubocop
-  - /opt/chefdk/embedded/bin/foodcritic --version
-  - /opt/chefdk/embedded/bin/foodcritic . --exclude spec
-  - /opt/chefdk/embedded/bin/rspec spec
+  - chef --version
+  - cookstyle --version
+  - foodcritic --version
+
+script: KITCHEN_LOCAL_YAML=.kitchen.dokken.yml kitchen verify ${INSTANCE}
+
+matrix:
+  include:
+    - script:
+      - /opt/chefdk/bin/chef exec delivery local all
+      env: UNIT_AND_LINT=1

@@ -5,9 +5,9 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec_reference.html
 
-describe file('/proc/sys/kernel/hostname') do
-  its(:content) { should match(/^compliance.localdomain.local$/) }
-end
+# describe file('/proc/sys/kernel/hostname') do
+#   its(:content) { should match(/^compliance.localdomain.local$/) }
+# end
 
 describe package('chef-compliance') do
   it { should be_installed }
@@ -17,7 +17,7 @@ describe file('/etc/chef-compliance/chef-compliance.rb') do
   it { should exist }
   it { should be_file }
   its(:content) { should match(/^topology "standalone"$/) }
-  its(:content) { should match(/^compliance_fqdn "compliance.localdomain.local"$/) }
+  # its(:content) { should match(/^compliance_fqdn "compliance.localdomain.local"$/) }
 end
 
 describe command('chef-compliance-ctl status') do

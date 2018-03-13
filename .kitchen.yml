@@ -1,67 +1,26 @@
 ---
 driver:
-    name: dokken
-    chef_version: latest
-    privileged: true
-    forward:
-      - 80
-      - 443
-
-transport:
-  name: dokken
+  name: vagrant
 
 provisioner:
-  name: dokken
+  name: chef_zero
+  deprecations_as_errors: true
 
 verifier:
   name: inspec
 
 platforms:
-  # https://github.com/CentOS/sig-cloud-instance-images/issues/30
-  # Unfortunately with a privileged container (required) the hostname doesn't
-  # correctly set on CentOS 6.x. Commenting out until resolved
-  #- name: centos-6
-  #  driver:
-  #    image: centos:6
-  #    platform: rhel
-  #    pid_one_command: /sbin/init
-  #    intermediate_instructions:
-  #      - RUN yum -y install which lsof initscripts
-
+  - name: amazonlinux
+    driver_config:
+      box: mvbcoding/awslinux
+  - name: centos-6
   - name: centos-7
-    driver:
-      image: centos:7
-      platform: rhel
-      pid_one_command: /usr/lib/systemd/systemd
-      intermediate_instructions:
-        - RUN yum -y install which lsof net-utils
-
-  - name: ubuntu-precise
-    driver:
-      image: ubuntu-upstart:12.04
-      platform: ubuntu
-      pid_one_command: /sbin/init
-      intermediate_instructions:
-        - RUN /usr/bin/apt-get update
-        - RUN /usr/bin/apt-get install -y apt-transport-https
-
-  - name: ubuntu-trusty
-    driver:
-      image: ubuntu-upstart:14.04
-      platform: ubuntu
-      pid_one_command: /sbin/init
-      provision_command:
-        - RUN /usr/bin/apt-get update
-        - RUN /usr/bin/apt-get install -y apt-transport-https net-tools
-
-  - name: ubuntu-xenial
-    driver:
-      image: ubuntu:16.04
-      platform: ubuntu
-      pid_one_command: /bin/systemd
-      provision_command:
-        - RUN /usr/bin/apt update
-        - RUN /usr/bin/apt install -y apt-transport-https net-tools
+  - name: debian-7
+  - name: debian-8
+  - name: debian-9
+  - name: fedora-26
+  - name: ubuntu-14.04
+  - name: ubuntu-16.04
 
 suites:
   - name: default
