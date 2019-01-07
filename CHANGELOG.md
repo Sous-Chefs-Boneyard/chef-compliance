@@ -3,6 +3,11 @@ chef-compliance CHANGELOG
 
 This file is used to list changes made in each version of the chef-compliance cookbook.
 
+0.1.7
+-----
+- [Brian Menges](https://github.com/mengesb) - Deprecation notification
+- [Brian Menges](https://github.com/mengesb) - Pin to chef-ingredient <= 2.0.0 ; address #22
+
 0.1.6
 -----
 - [Brian Menges](https://github.com/mengesb) - Transfer ownership to Sous Chefs

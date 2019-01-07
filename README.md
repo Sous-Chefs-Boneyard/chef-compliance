@@ -10,6 +10,11 @@ package from Package Cloud and perform the initial configuration.
 
 Chef Supermarket: https://supermarket.chef.io/cookbooks/chef-compliance
 
+Deprecated
+----------
+
+This cookbook is now deprecated since Chef no longer supports stand-alone installations of Chef Compliance. The product has now been integrated into [Chef Automate](https://www.chef.io/automate/)
+
 Requirements
 ------------
 This cookbook is tested with  Chef (client) 12. It may work with or

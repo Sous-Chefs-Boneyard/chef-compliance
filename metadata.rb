@@ -8,9 +8,9 @@ source_url       'https://github.com/sous-chefs/chef-compliance' if respond_to?(
 issues_url       'https://github.com/sous-chefs/chef-compliance/issues' if respond_to?(:issues_url)
 chef_version     '>= 12.5'
 
-version '0.1.6'
+version '0.1.7'
 
-depends 'chef-ingredient', '>= 0.18.4'
+depends 'chef-ingredient', '<= 2.0.0'
 
 supports 'debian'
 supports 'ubuntu'
